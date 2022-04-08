@@ -1,0 +1,36 @@
+server:
+  port: 8888
+spring:
+  application:
+    name: getway
+  cloud:
+  gateway:
+    routes:
+    - id: MecanicienModule
+      uri: lb://mecanicien
+      predicates:
+      - Path=/reparation/mecanicien/**
+    - id: ClientModule
+      uri: lb://client
+      predicates:
+      - Path=/reparation/client/**
+    - id: AdresseModule
+      uri: lb://adresse
+      predicates:
+      - Path=/reparation/adresse/**
+    - id: HorraireModule
+      uri: lb://horraire
+      predicates:
+      - Path=/reparation/horraire/**
+    - id: RendezVousModule
+      uri: lb://rendez
+      predicates:
+      - Path=/reparation/rendez/**
+      - id: CommandeModule
+      uri: lb://commande
+      predicates:
+      - Path=/reparation/commande/**
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
