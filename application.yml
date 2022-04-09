@@ -4,8 +4,8 @@ spring:
       discovery:
         enabled: true
       enabled: false
-      application:
-        name: application
+  application:
+    name: application
   datasource:
     url: jdbc:mysql://localhost:3306/ReparationBd?createDatabaseIfNotExist=true
     username: root
