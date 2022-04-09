@@ -1,4 +1,10 @@
-spring:
+ eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
+ 
+ spring:
   cloud:
     config:
       discovery:
@@ -18,8 +24,3 @@ spring:
       ddl-auto: update
       naming:
         implicit-strategy: org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy
-
-eureka:
-  client:
-    service-url:
-      defaultZone: http://localhost:8761/eureka/
