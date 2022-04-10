@@ -2,8 +2,24 @@
   client:
     service-url:
       defaultZone: http://localhost:8761/eureka/
+      
 
- 
+ boot:
+   admin:
+     client:
+       url:http://localhost:8082
+       
+  
+ management:
+   endpoints:
+     web:
+       exposure:
+         include:
+           "*"
+   endpoint:
+     health:
+       show-details:
+         always
  spring:
   cloud:
     config:
