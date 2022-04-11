@@ -1,16 +1,11 @@
- eureka:
+eureka:
   client:
     service-url:
       defaultZone: http://localhost:8761/eureka/
-      
 
- boot:
-   admin:
-     client:
-       url:http://localhost:8082
-       
+ 
   
- management:
+management:
    endpoints:
      web:
        exposure:
@@ -20,12 +15,17 @@
      health:
        show-details:
          always
- spring:
+spring:
+  boot:
+   admin:
+     client:
+       url:http://localhost:8082   
   cloud:
     config:
       discovery:
         enabled: true
       enabled: false
+     
   application:
     name: application
   datasource:
